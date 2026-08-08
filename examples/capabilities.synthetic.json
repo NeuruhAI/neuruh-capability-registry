@@ -1,0 +1,30 @@
+{
+  "schema_version": "neuruh.capability-registry.v0.1",
+  "capabilities": [
+    {
+      "operation": "document.render",
+      "kind": "other",
+      "requires_receipt": true,
+      "requires_precondition": false,
+      "allowed_target_types": [
+        "document"
+      ],
+      "arg_schema": {
+        "format": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "html",
+            "text"
+          ]
+        },
+        "sections": {
+          "type": "string[]",
+          "required": true,
+          "max_items": 20,
+          "max_length": 200
+        }
+      }
+    }
+  ]
+}
