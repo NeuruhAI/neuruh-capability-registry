@@ -1,5 +1,7 @@
 # Neuruh Capability Registry
 
+[![ci](https://github.com/NeuruhAI/neuruh-capability-registry/actions/workflows/ci.yml/badge.svg)](https://github.com/NeuruhAI/neuruh-capability-registry/actions/workflows/ci.yml)
+
 A dependency-free typed capability manifest and argument validator for agent runtimes.
 
 The registry declares which operations exist, the arguments they accept, and whether a receipt or precondition is required. Unknown operations and unknown arguments fail closed.
