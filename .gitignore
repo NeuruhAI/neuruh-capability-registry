@@ -13,3 +13,4 @@ build/
 *.key
 credentials*
 secrets*
+.venv*/

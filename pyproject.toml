@@ -4,10 +4,20 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "neuruh-capability-registry"
-version = "0.1.1a0"
+version = "0.1.2a0"
 description = "Fail-closed typed capability manifest and argument validator."
 requires-python = ">=3.11"
-license = {text = "Apache-2.0"}
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{name = "Jeramie Hicks / Neuruh"}]
+
+[project.scripts]
+neuruh-capability-registry = "neuruh_capability_registry.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/NeuruhAI/neuruh-capability-registry"
+Repository = "https://github.com/NeuruhAI/neuruh-capability-registry"
 
 [tool.setuptools.packages.find]
 where = ["src"]

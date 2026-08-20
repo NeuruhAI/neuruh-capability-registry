@@ -14,7 +14,11 @@ MANIFEST = {
             "allowed_target_types": ["file"],
             "arg_schema": {
                 "content": {"type": "string", "required": True, "max_length": 100},
-                "mode": {"type": "string", "required": False, "enum": ["replace", "create"]},
+                "mode": {
+                    "type": "string",
+                    "required": False,
+                    "enum": ["replace", "create"],
+                },
             },
         }
     ],
@@ -40,7 +44,9 @@ class CapabilityRegistryTests(unittest.TestCase):
 
     def test_unknown_argument_rejected(self):
         with self.assertRaises(CapabilityError):
-            self.registry.validate_args("file.write_synthetic", {"content": "x", "secret": "y"})
+            self.registry.validate_args(
+                "file.write_synthetic", {"content": "x", "secret": "y"}
+            )
 
     def test_argument_type_rejected(self):
         with self.assertRaises(CapabilityError):
@@ -48,10 +54,14 @@ class CapabilityRegistryTests(unittest.TestCase):
 
     def test_enum_rejected(self):
         with self.assertRaises(CapabilityError):
-            self.registry.validate_args("file.write_synthetic", {"content": "x", "mode": "append"})
+            self.registry.validate_args(
+                "file.write_synthetic", {"content": "x", "mode": "append"}
+            )
 
     def test_valid_arguments(self):
-        self.registry.validate_args("file.write_synthetic", {"content": "hello", "mode": "replace"})
+        self.registry.validate_args(
+            "file.write_synthetic", {"content": "hello", "mode": "replace"}
+        )
 
 
 if __name__ == "__main__":
